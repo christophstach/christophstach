@@ -1,7 +1,7 @@
-import { Link, createFileRoute } from '@tanstack/react-router'
-import { fetchPost } from '../utils/posts'
+import { createFileRoute, Link } from '@tanstack/react-router'
 import { NotFound } from '~/components/NotFound'
 import { PostErrorComponent } from '~/components/PostError'
+import { fetchPost } from '../utils/posts'
 
 export const Route = createFileRoute('/posts/$postId')({
   loader: ({ params: { postId } }) => fetchPost({ data: postId }),
@@ -25,7 +25,7 @@ function PostComponent() {
           postId: post.id,
         }}
         activeProps={{ className: 'text-black font-bold' }}
-        className="block py-1 text-blue-800 hover:text-blue-600"
+        className="text-blue-800 py-1 block hover:text-blue-600"
       >
         Deep View
       </Link>

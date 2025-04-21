@@ -1,11 +1,11 @@
-import { Link, Outlet, createFileRoute } from '@tanstack/react-router'
-import { DEPLOY_URL } from '../utils/users'
 import type { User } from '../utils/users'
+import { createFileRoute, Link, Outlet } from '@tanstack/react-router'
+import { DEPLOY_URL } from '../utils/users'
 
 export const Route = createFileRoute('/users')({
   loader: async () => {
     try {
-      const res = await fetch(DEPLOY_URL + '/api/users')
+      const res = await fetch(`${DEPLOY_URL}/api/users`)
       if (!res.ok) {
         throw new Error('Unexpected status code')
       }
@@ -13,7 +13,8 @@ export const Route = createFileRoute('/users')({
       const data = (await res.json()) as Array<User>
 
       return data
-    } catch {
+    }
+    catch {
       throw new Error('Failed to fetch users')
     }
   },
@@ -25,7 +26,7 @@ function UsersLayoutComponent() {
 
   return (
     <div className="p-2 flex gap-2">
-      <ul className="list-disc pl-4">
+      <ul className="pl-4 list-disc">
         {[
           ...users,
           { id: 'i-do-not-exist', name: 'Non-existent User', email: '' },
@@ -37,7 +38,7 @@ function UsersLayoutComponent() {
                 params={{
                   userId: String(user.id),
                 }}
-                className="block py-1 text-blue-800 hover:text-blue-600"
+                className="text-blue-800 py-1 block hover:text-blue-600"
                 activeProps={{ className: 'text-black font-bold' }}
               >
                 <div>{user.name}</div>

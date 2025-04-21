@@ -1,9 +1,9 @@
 import {
+  createRootRoute,
   HeadContent,
   Link,
   Outlet,
   Scripts,
-  createRootRoute,
 } from '@tanstack/react-router'
 import { TanStackRouterDevtools } from '@tanstack/react-router-devtools'
 import * as React from 'react'
@@ -76,7 +76,7 @@ function RootDocument({ children }: { children: React.ReactNode }) {
         <HeadContent />
       </head>
       <body>
-        <div className="p-2 flex gap-2 text-lg">
+        <div className="text-lg p-2 flex gap-2">
           <Link
             to="/"
             activeProps={{
@@ -85,7 +85,8 @@ function RootDocument({ children }: { children: React.ReactNode }) {
             activeOptions={{ exact: true }}
           >
             Home
-          </Link>{' '}
+          </Link>
+          {' '}
           <Link
             to="/posts"
             activeProps={{
@@ -93,7 +94,8 @@ function RootDocument({ children }: { children: React.ReactNode }) {
             }}
           >
             Posts
-          </Link>{' '}
+          </Link>
+          {' '}
           <Link
             to="/users"
             activeProps={{
@@ -101,7 +103,8 @@ function RootDocument({ children }: { children: React.ReactNode }) {
             }}
           >
             Users
-          </Link>{' '}
+          </Link>
+          {' '}
           <Link
             to="/route-a"
             activeProps={{
@@ -109,7 +112,8 @@ function RootDocument({ children }: { children: React.ReactNode }) {
             }}
           >
             Pathless Layout
-          </Link>{' '}
+          </Link>
+          {' '}
           <Link
             to="/deferred"
             activeProps={{
@@ -117,7 +121,8 @@ function RootDocument({ children }: { children: React.ReactNode }) {
             }}
           >
             Deferred
-          </Link>{' '}
+          </Link>
+          {' '}
           <Link
             // @ts-expect-error
             to="/this-route-does-not-exist"

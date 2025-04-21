@@ -11,14 +11,14 @@ const personServerFn = createServerFn({ method: 'GET' })
 const slowServerFn = createServerFn({ method: 'GET' })
   .validator((d: string) => d)
   .handler(async ({ data: name }) => {
-    await new Promise((r) => setTimeout(r, 1000))
+    await new Promise(r => setTimeout(r, 1000))
     return { name, randomNumber: Math.floor(Math.random() * 100) }
   })
 
 export const Route = createFileRoute('/deferred')({
   loader: async () => {
     return {
-      deferredStuff: new Promise<string>((r) =>
+      deferredStuff: new Promise<string>(r =>
         setTimeout(() => r('Hello deferred!'), 2000),
       ),
       deferredPerson: slowServerFn({ data: 'Tanner Linsley' }),
@@ -35,14 +35,20 @@ function Deferred() {
   return (
     <div className="p-2">
       <div data-testid="regular-person">
-        {person.name} - {person.randomNumber}
+        {person.name}
+        {' '}
+        -
+        {person.randomNumber}
       </div>
       <Suspense fallback={<div>Loading person...</div>}>
         <Await
           promise={deferredPerson}
-          children={(data) => (
+          children={data => (
             <div data-testid="deferred-person">
-              {data.name} - {data.randomNumber}
+              {data.name}
+              {' '}
+              -
+              {data.randomNumber}
             </div>
           )}
         />
@@ -50,10 +56,13 @@ function Deferred() {
       <Suspense fallback={<div>Loading stuff...</div>}>
         <Await
           promise={deferredStuff}
-          children={(data) => <h3 data-testid="deferred-stuff">{data}</h3>}
+          children={data => <h3 data-testid="deferred-stuff">{data}</h3>}
         />
       </Suspense>
-      <div>Count: {count}</div>
+      <div>
+        Count:
+        {count}
+      </div>
       <div>
         <button onClick={() => setCount(count + 1)}>Increment</button>
       </div>

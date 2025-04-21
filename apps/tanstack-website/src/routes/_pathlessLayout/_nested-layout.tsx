@@ -1,4 +1,4 @@
-import { Link, Outlet, createFileRoute } from '@tanstack/react-router'
+import { createFileRoute, Link, Outlet } from '@tanstack/react-router'
 
 export const Route = createFileRoute('/_pathlessLayout/_nested-layout')({
   component: LayoutComponent,
@@ -8,7 +8,7 @@ function LayoutComponent() {
   return (
     <div>
       <div>I'm a nested layout</div>
-      <div className="flex gap-2 border-b">
+      <div className="border-b flex gap-2">
         <Link
           to="/route-a"
           activeProps={{
