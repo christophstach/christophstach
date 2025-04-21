@@ -14,7 +14,7 @@
 
   // Auto fix
   "editor.codeActionsOnSave": {
-    "source.fixAll.eslint": "explicit",
+    "source.fixAll.eslint": "always",
     "source.organizeImports": "never"
   },
 
@@ -56,5 +56,10 @@
     "scss",
     "pcss",
     "postcss"
-  ]
+  ],
+
+  "html.completion.attributeDefaultValue": "doublequotes",
+  "[typescriptreact]": {
+    "typescript.preferences.quoteStyle": "double"
+  }
 }

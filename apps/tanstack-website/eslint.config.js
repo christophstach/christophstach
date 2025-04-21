@@ -4,4 +4,5 @@ export default antfu({
   formatters: true,
   unocss: true,
   react: true,
+  ignores: ['src/routeTree.gen.ts'],
 })

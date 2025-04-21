@@ -8,6 +8,7 @@ export function NotFound({ children }: { children?: any }) {
       </div>
       <p className="flex flex-wrap gap-2 items-center">
         <button
+          type="button"
           onClick={() => window.history.back()}
           className="text-sm text-white font-black px-2 py-1 rounded bg-emerald-500 uppercase"
         >

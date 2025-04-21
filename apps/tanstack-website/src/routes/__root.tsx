@@ -28,7 +28,6 @@ export const Route = createRootRoute({
       }),
     ],
     links: [
-      { rel: 'stylesheet', href: appCss },
       {
         rel: 'apple-touch-icon',
         sizes: '180x180',
@@ -124,7 +123,7 @@ function RootDocument({ children }: { children: React.ReactNode }) {
           </Link>
           {' '}
           <Link
-            // @ts-expect-error
+            // @ts-expect-error Just an example on how non-existing route throw errors
             to="/this-route-does-not-exist"
             activeProps={{
               className: 'font-bold',

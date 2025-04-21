@@ -4,6 +4,7 @@ import { createAPIFileRoute } from '@tanstack/react-start/api'
 
 export const APIRoute = createAPIFileRoute('/api/users/$id')({
   GET: async ({ request, params }) => {
+    // eslint-disable-next-line no-console
     console.info(`Fetching users by id=${params.id}... @`, request.url)
     try {
       const res = await fetch(

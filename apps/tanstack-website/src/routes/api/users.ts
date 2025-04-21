@@ -4,6 +4,7 @@ import { createAPIFileRoute } from '@tanstack/react-start/api'
 
 export const APIRoute = createAPIFileRoute('/api/users')({
   GET: async ({ request }) => {
+    // eslint-disable-next-line no-console
     console.info('Fetching users... @', request.url)
     const res = await fetch('https://jsonplaceholder.typicode.com/users')
     if (!res.ok) {

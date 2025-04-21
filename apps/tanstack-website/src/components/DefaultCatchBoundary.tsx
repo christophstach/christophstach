@@ -21,6 +21,7 @@ export function DefaultCatchBoundary({ error }: ErrorComponentProps) {
       <ErrorComponent error={error} />
       <div className="flex flex-wrap gap-2 items-center">
         <button
+          type="button"
           onClick={() => {
             router.invalidate()
           }}
