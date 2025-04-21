@@ -1,6 +1,11 @@
 {
     "folders": [
       {
+        "name": "ROOT",
+        "path": "."
+      },
+      {
+        "name": "apps/tanstack-website",
         "path": "apps/tanstack-website",
       }
  
