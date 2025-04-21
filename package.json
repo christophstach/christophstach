@@ -1,0 +1,9 @@
+{
+  "name": "christophstach",
+  "version": "1.0.0",
+  "description": "Christoph Stach's monorepo",
+  "keywords": ["Monorepo", "pnpm"],
+  "author": "Christoph Stach",
+  "license": "MIT",
+  "packageManager": "pnpm@10.9.0"
+}
