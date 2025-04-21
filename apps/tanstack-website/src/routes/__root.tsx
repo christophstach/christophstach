@@ -10,6 +10,7 @@ import * as React from 'react'
 import { DefaultCatchBoundary } from '~/components/DefaultCatchBoundary'
 import { NotFound } from '~/components/NotFound'
 import { seo } from '~/utils/seo'
+import 'virtual:uno.css'
 
 export const Route = createRootRoute({
   head: () => ({

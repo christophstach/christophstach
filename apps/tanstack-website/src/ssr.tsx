@@ -7,8 +7,6 @@ import {
 } from '@tanstack/react-start/server'
 import { createRouter } from './router'
 
-import 'virtual:uno.css'
-
 const startHandler = createStartHandler({
   createRouter,
   getRouterManifest,
